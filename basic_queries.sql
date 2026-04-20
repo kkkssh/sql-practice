@@ -4,6 +4,9 @@
 -- SELECT, ORDER BY, DISTINCT, WHERE, ALTER
 -- =====================================
 
+-- Note: this file is organized for syntax practice, 
+-- so queries are not always meant to be run all at once.
+
 -- =========================
 -- CREATE DATABASE & USE
 -- =========================
@@ -147,7 +150,7 @@ WHERE student_year >= 2;
 -- =========================
 
 -- Rename column using alias
-SELECT name AS women, student_year
+SELECT name AS student_name, student_year
 FROM students
 WHERE gender = 'woman';
 
@@ -167,6 +170,10 @@ RENAME COLUMN email TO student_email;
 -- Modify column type
 ALTER TABLE students
 MODIFY student_email VARCHAR(150);
+
+-- Check NULL values
+SELECT * FROM students
+WHERE student_email IS NULL;
 
 -- Drop column (use carefully)
 ALTER TABLE students
@@ -197,13 +204,37 @@ WHERE name LIKE '%m%';  -- contains m
 
 -- IN (multiple values)
 SELECT * FROM students
-WHERE country IN ('UK', 'USA');
+WHERE country IN ('UK', 'USA');	 -- WHERE country = 'UK' OR country = 'USA';
 
 -- BETWEEN (range)
 SELECT * FROM students
 WHERE student_year BETWEEN 2 AND 3;
 
--- IS NULL
-SELECT * FROM students
-WHERE student_email IS NULL;
 
+-- =========================
+-- NOT CONDITIONS
+-- =========================
+
+-- NOT EQUAL
+SELECT * FROM students
+WHERE student_year <> 1;
+
+-- same as NOT =
+SELECT * FROM students
+WHERE NOT student_year = 1;
+
+-- NOT IN
+SELECT * FROM students
+WHERE country NOT IN ('UK', 'USA');
+
+-- NOT LIKE
+SELECT * FROM students
+WHERE name NOT LIKE 'A%';   -- does not start with A
+
+-- NOT BETWEEN
+SELECT * FROM students
+WHERE student_year NOT BETWEEN 2 AND 3;
+
+-- IS NOT NULL
+SELECT * FROM students
+WHERE student_email IS NOT NULL;
