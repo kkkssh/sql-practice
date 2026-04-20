@@ -172,3 +172,38 @@ MODIFY student_email VARCHAR(150);
 ALTER TABLE students
 DROP COLUMN student_email;
 
+
+-- =========================
+-- WHERE ADVANCED FILTERING
+-- =========================
+
+-- AND
+SELECT * FROM students
+WHERE major = 'Biology' AND student_year = 2;
+
+-- OR
+SELECT * FROM students
+WHERE major = 'Biology' OR major = 'Engineering';
+
+-- LIKE (pattern search)
+SELECT * FROM students
+WHERE name LIKE 'A%';   -- starts with A
+
+SELECT * FROM students
+WHERE name LIKE '%a';   -- ends with a
+
+SELECT * FROM students
+WHERE name LIKE '%m%';  -- contains m
+
+-- IN (multiple values)
+SELECT * FROM students
+WHERE country IN ('UK', 'USA');
+
+-- BETWEEN (range)
+SELECT * FROM students
+WHERE student_year BETWEEN 2 AND 3;
+
+-- IS NULL
+SELECT * FROM students
+WHERE student_email IS NULL;
+
