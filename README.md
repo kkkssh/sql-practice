@@ -6,6 +6,13 @@ This repository contains my SQL practice as I build a strong foundation in data 
 
 This repository is organized to gradually build SQL skills, starting from basic queries and expanding into more advanced topics.
 
+## Skills
+
+- SQL basics (CRUD, SELECT)
+- Filtering & sorting (WHERE, ORDER BY)
+- Aggregation (COUNT, SUM, AVG)
+- Grouping (GROUP BY, HAVING)
+
 ## Files
 
 - basic_queries.sql  
@@ -18,6 +25,9 @@ This repository is organized to gradually build SQL skills, starting from basic 
   - WHERE (basic & advanced filtering)
   - ORDER BY
   - DISTINCT
+  - AGGREGATE FUNCTIONS (COUNT, MAX, MIN, SUM, AVG)
+  - GROUP BY
+  - HAVING
   - ALTER TABLE
 
 ## Dataset
@@ -43,5 +53,6 @@ To develop practical SQL skills for data analysis and real-world problem solving
 ## Roadmap
 
 - JOIN queries
-- GROUP BY and aggregation
+- Subqueries
+- Window functions
 - Real-world data analysis examples
