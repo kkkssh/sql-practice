@@ -1,7 +1,12 @@
 -- =====================================
 -- BASIC SQL QUERIES PRACTICE
--- Covers: CREATE, INSERT, UPDATE, DELETE,
--- SELECT, ORDER BY, DISTINCT, WHERE, ALTER
+--
+-- Topics Covered:
+-- - Data Definition: CREATE, ALTER
+-- - Data Manipulation: INSERT, UPDATE, DELETE
+-- - Data Query: SELECT, WHERE, ORDER BY, DISTINCT
+-- - Aggregation: COUNT, MAX, MIN, SUM, AVG
+-- - Grouping & Filtering: GROUP BY, HAVING
 -- =====================================
 
 -- Note: this file is organized for syntax practice, 
@@ -238,3 +243,57 @@ WHERE student_year NOT BETWEEN 2 AND 3;
 -- IS NOT NULL
 SELECT * FROM students
 WHERE student_email IS NOT NULL;
+
+
+-- =========================
+-- AGGREGATE FUNCTIONS
+-- =========================
+
+-- COUNT (row count)
+SELECT COUNT(*) FROM students;
+SELECT COUNT(student_email) FROM students;
+SELECT COUNT(distinct student_year) FROM students;	-- avoid counting duplicates
+
+-- MAX
+SELECT MAX(student_year) FROM students;
+
+-- MIN
+SELECT MIN(student_year) FROM students;
+
+-- SUM
+SELECT SUM(student_year) FROM students;
+
+-- AVG
+SELECT AVG(student_year) FROM students;
+
+
+-- =========================
+-- GROUP BY
+-- =========================
+
+-- Count students by major
+SELECT major, COUNT(*) AS total_students
+FROM students
+GROUP BY major;
+
+-- Average year by country
+SELECT country, AVG(student_year) AS avg_year
+FROM students
+GROUP BY country;
+
+
+-- =========================
+-- HAVING (filter after grouping)
+-- =========================
+
+-- Only show majors with more than 1 student
+SELECT major, COUNT(*) AS total_students
+FROM students
+GROUP BY major
+HAVING COUNT(*) > 1;	-- HAVING total_students > 1;
+
+-- Average year greater than 2
+SELECT country, AVG(student_year) AS avg_year
+FROM students
+GROUP BY country
+HAVING AVG(student_year) > 2;	-- HAVING avg_year > 2;
