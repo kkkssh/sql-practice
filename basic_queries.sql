@@ -9,6 +9,8 @@
 -- - Grouping & Filtering: GROUP BY, HAVING
 -- =====================================
 
+-- Covers core SQL fundamentals using a single table (students)
+
 -- Note: this file is organized for syntax practice, 
 -- so queries are not always meant to be run all at once.
 
