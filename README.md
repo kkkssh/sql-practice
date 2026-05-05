@@ -4,7 +4,7 @@ This repository contains my SQL practice as I build a strong foundation in data 
 
 ## Structure
 
-This repository is organized to gradually build SQL skills, starting from basic queries and expanding into more advanced topics.
+This repository is organized to gradually build SQL skills, starting from basic queries and expanding into more advanced topics such as joins and data analysis.
 
 ## Skills
 
@@ -12,6 +12,7 @@ This repository is organized to gradually build SQL skills, starting from basic 
 - Filtering & sorting (WHERE, ORDER BY)
 - Aggregation (COUNT, SUM, AVG)
 - Grouping (GROUP BY, HAVING)
+- Table joins (INNER JOIN, LEFT JOIN, RIGHT JOIN)
 
 ## Files
 
@@ -29,6 +30,13 @@ This repository is organized to gradually build SQL skills, starting from basic 
   - GROUP BY
   - HAVING
   - ALTER TABLE
+
+- joins.sql  
+  → Covers table relationships and JOIN operations:
+  - INNER JOIN
+  - LEFT JOIN
+  - RIGHT JOIN
+  - JOIN with GROUP BY
 
 ## Dataset
 
@@ -52,7 +60,7 @@ To develop practical SQL skills for data analysis and real-world problem solving
 
 ## Roadmap
 
-- JOIN queries
+- Advanced JOIN scenarios
 - Subqueries
 - Window functions
-- Real-world data analysis examples
+- Real-world data analysis projects
